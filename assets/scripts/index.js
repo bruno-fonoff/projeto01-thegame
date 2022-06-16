@@ -25,40 +25,44 @@ startBtn.addEventListener("click", () => {
   }
 
   for (let i = 0; i < gameP1.cardsPlayer1.length; i++) {
-    gameP1.cardsPlayer1[i].addEventListener("click", () => {
-      //=========================>>NOME DO POKEMON PLAYER 1 <<<===========================\\
-      let name = gameP1.battleCardPlayer1[i].name;
-      pokeName1[gameP1.round].innerText = name;
-      //========== IMAGEM CRESCER CLICADA!
-      gameP1.cardsPlayer1[i].setAttribute("class", "imageSelect");
-      setTimeout(() => {
-        gameP1.cardsPlayer1[i].classList.remove("imageSelect");
-      }, 2000);
-
-      //=========================>> IMAGEM CRESCER CPU! <<<===========================\\
-
-      gameP1.cardsPlayer2[gameP1.round].setAttribute("class", "imageSelect");
-      setTimeout(() => {
-        gameP1.cardsPlayer2[gameP1.round - 1].classList.remove("imageSelect");
-      }, 2000);
-      //=========================>> |||||||||||||||||||| <<<===========================\\
-
-      gameP1.flipCard(gameP1.cardsPlayer2[gameP1.round], i);
-      gameP1.battle(i);
-      gameP1.round++;
-      if (gameP1.placarWin === 2) {
+    gameP1.cardsPlayer1[i].addEventListener(
+      "click",
+      () => {
+        //=========================>>NOME DO POKEMON PLAYER 1 <<<===========================\\
+        let name = gameP1.battleCardPlayer1[i].name;
+        pokeName1[gameP1.round].innerText = name;
+        //========== IMAGEM CRESCER CLICADA!
+        gameP1.cardsPlayer1[i].setAttribute("class", "imageSelect");
         setTimeout(() => {
-          alert("CONGRATULATIONS! YOU WIN!");
-          return location.reload();
-        }, 2500);
-      }
-      if (gameP1.placarLose === 2) {
+          gameP1.cardsPlayer1[i].classList.remove("imageSelect");
+        }, 2000);
+
+        //=========================>> IMAGEM CRESCER CPU! <<<===========================\\
+
+        gameP1.cardsPlayer2[gameP1.round].setAttribute("class", "imageSelect");
         setTimeout(() => {
-          alert("YOU LOSE!!!");
-          return location.reload();
-        }, 2500);
-      }
-    });
+          gameP1.cardsPlayer2[gameP1.round - 1].classList.remove("imageSelect");
+        }, 2000);
+        //=========================>> |||||||||||||||||||| <<<===========================\\
+
+        gameP1.flipCard(gameP1.cardsPlayer2[gameP1.round], i);
+        gameP1.battle(i);
+        gameP1.round++;
+        if (gameP1.placarWin === 2) {
+          setTimeout(() => {
+            alert("CONGRATULATIONS! YOU WIN!");
+            return location.reload();
+          }, 2500);
+        }
+        if (gameP1.placarLose === 2) {
+          setTimeout(() => {
+            alert("YOU LOSE!!!");
+            return location.reload();
+          }, 2500);
+        }
+      },
+      { once: true }
+    );
   }
 
   startBtn.setAttribute("style", "display: none");
