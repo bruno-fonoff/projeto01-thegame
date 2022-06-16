@@ -1,22 +1,22 @@
 const winTable = document.querySelectorAll(".winTable");
-console.log(winTable);
+const pokeName2 = document.querySelectorAll(".pokeName2");
+// console.log(winTable);
 
 class Game {
   constructor(gameBoard) {
-    this.poke1player1 = poke1player1;
     this.round = 0;
     this.gameBoard = gameBoard;
     this.backCard = "./assets/images/back-card.jpg"; //lado de tras da carta
     this.totalCards = [
-      new Cards("Charizard", "Fire", "./assets/images/charizardvmax.jpg", 230),
+      new Cards("Charizard", "Fire", "./assets/images/charizardvmax.jpg", 330),
       new Cards("Gyarados", "Water", "./assets/images/gyarados.jpg", 230),
-      new Cards("Jolteon", "Eletric", "./assets/images/jolteonvmax.jpg", 230),
-      new Cards("Blastoise", "Water", "./assets/images/blastoise.jpg", 230),
-      new Cards("Pikachu", "Eletric", "./assets/images/pikachu.jpg", 230),
-      new Cards("Vaporeon", "Water", "./assets/images/vaporeon.jpg", 230),
-      new Cards("Ninetales", "Fire", "./assets/images/ninetales.jpg", 230),
-      new Cards("Flareon", "Fire", "./assets/images/flareon.jpg", 230),
-      new Cards("Electrode", "Eletric", "./assets/images/electrode.jpg", 230),
+      new Cards("Jolteon", "Eletric", "./assets/images/jolteonvmax.jpg", 300),
+      new Cards("Blastoise", "Water", "./assets/images/blastoise.jpg", 240),
+      new Cards("Pikachu", "Eletric", "./assets/images/pikachu.jpg", 190),
+      new Cards("Vaporeon", "Water", "./assets/images/vaporeon.jpg", 210),
+      new Cards("Ninetales", "Fire", "./assets/images/ninetales.jpg", 200),
+      new Cards("Flareon", "Fire", "./assets/images/flareon.jpg", 210),
+      new Cards("Electrode", "Eletric", "./assets/images/electrode.jpg", 190),
     ];
 
     this.drawnCards = []; //cartas embaralhadas
@@ -70,12 +70,13 @@ class Game {
 
   battle(index) {
     this.player1Choise = this.battleCardPlayer1[index];
-
     this.player2Choise = this.battleCardPlayer2[this.round];
+    pokeName2[this.round].innerText = this.player2Choise.name; //=====>>> Insere nome Pokemon CPU no placar;
+
     // console.log(this.player1Choise);
     // console.log(this.player2Choise);
-    console.log(winTable[this.round]);
-    console.log(this.player1Choise);
+    // console.log(winTable[this.round]);
+    // console.log(this.player1Choise);
 
     if (this.player1Choise.strength > this.player2Choise.strength) {
       console.log(`${this.player1Choise.name} WIN!!!`);
@@ -83,35 +84,40 @@ class Game {
 
       this.placarWin++;
       console.log(this.placarWin);
-    } else if (
-      (this.player1Choise.strength === this.player2Choise.strength &&
-        this.player1Choise.type === "Water" &&
-        this.player2Choise.type === "Fire") ||
-      (this.player1Choise.type === "Eletric" &&
-        this.player2Choise.type === "Water") ||
-      (this.player1Choise.type === "Fire" &&
-        this.player2Choise.type === "Eletric")
-    ) {
-      this.placarWin++;
-      winTable[this.round].innerText = this.player1Choise.name;
-      console.log("desempate por tipo");
+    }
+    // if (
+    //   (this.player1Choise.strength == this.player2Choise.strength &&
+    //     this.player1Choise.type === "Water" &&
+    //     this.player2Choise.type === "Fire") ||
+    //   (this.player1Choise.type === "Eletric" &&
+    //     this.player2Choise.type === "Water") ||
+    //   (this.player1Choise.type === "Fire" &&
+    //     this.player2Choise.type === "Eletric")
+    // ) {
+    //
+    //  this.placarWin++;
+    //   winTable[this.round].innerText = this.player1Choise.name;
+    //   console.log("desempate por tipo");
 
-      console.log(`${this.placarWin}WIN`);
-    } else if (
-      (this.player1Choise.strength === this.player2Choise.strength &&
-        this.player1Choise.type === "Fire" &&
-        this.player2Choise.type === "Water") ||
-      (this.player1Choise.type === "Water" &&
-        this.player2Choise.type === "Eletric") ||
-      (this.player1Choise.type === "Eletric" &&
-        this.player2Choise.type === "Fire")
-    ) {
-      this.placarLose++;
-      winTable[this.round].innerText = this.player2Choise.name;
-      console.log("desempate por tipo");
+    //   console.log(`${this.placarWin}WIN`);
+    // }
+    // else if (
+    //   (this.player1Choise.strength === this.player2Choise.strength &&
+    //     this.player1Choise.type === "Fire" &&
+    //     this.player2Choise.type === "Water") ||
+    //   (this.player1Choise.type === "Water" &&
+    //     this.player2Choise.type === "Eletric") ||
+    //   (this.player1Choise.type === "Eletric" &&
+    //     this.player2Choise.type === "Fire")
+    // ) {
+    //
+    //  this.placarLose++;
+    //   winTable[this.round].innerText = this.player2Choise.name;
+    //   console.log("desempate por tipo");
 
-      console.log(`${this.placarWin}WIN`);
-    } else {
+    //   console.log(`${this.placarWin}WIN`);
+    // }
+    else {
       console.log(`${this.player1Choise.name} LOSE!!!`);
       this.placarLose++;
       winTable[this.round].innerText = this.player2Choise.name;

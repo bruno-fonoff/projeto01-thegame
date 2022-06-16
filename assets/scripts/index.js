@@ -1,13 +1,11 @@
 const placarPokemon = document.querySelector(".pokemonName");
 const pokeName1 = document.querySelectorAll(".pokeName1");
-const rodada2 = document.querySelectorAll(".rodada2");
 
 //=================================>>> <<<=================================\\
 
 const gameBoard = document.getElementById("gameboard"); //linka elemento html ao JS
 const player1 = document.getElementById("player1"); //linka elemento html ao JS
 const player2 = document.getElementById("player2"); //linka elemento html ao JS
-const poke1player1 = document.getElementById("poke1player1");
 const startBtn = document.getElementById("start"); //linka elemento html ao JS
 
 const gameP1 = new Game(player1);
@@ -36,7 +34,7 @@ startBtn.addEventListener("click", () => {
       gameP1.cardsPlayer1[i].setAttribute("class", "imageSelect");
       setTimeout(() => {
         gameP1.cardsPlayer1[i].classList.remove("imageSelect");
-      }, 500);
+      }, 2000);
 
       //================================================================
       //========== IMAGEM CRESCER CPU!
@@ -44,9 +42,9 @@ startBtn.addEventListener("click", () => {
       gameP1.cardsPlayer2[gameP1.round].setAttribute("class", "imageSelect");
       setTimeout(() => {
         gameP1.cardsPlayer2[gameP1.round - 1].classList.remove("imageSelect");
-      }, 500);
+      }, 2000);
       //=====================================================
-      console.log(gameP1.cardsPlayer2[gameP1.round]);
+      // console.log(gameP1.cardsPlayer2[gameP1.round]);
       gameP1.flipCard(gameP1.cardsPlayer2[gameP1.round], i);
       gameP1.battle(i);
       gameP1.round++;
