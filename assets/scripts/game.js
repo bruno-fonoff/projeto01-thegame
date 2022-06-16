@@ -1,6 +1,5 @@
 const winTable = document.querySelectorAll(".winTable");
 const pokeName2 = document.querySelectorAll(".pokeName2");
-// console.log(winTable);
 
 class Game {
   constructor(gameBoard) {
@@ -23,11 +22,11 @@ class Game {
 
     this.cardsRandom = []; //img criadas no FOR
 
-    this.cardsCover = []; //cartas desviradas p2
+    this.cardsCover = []; //cartas desviradas Player 2
 
-    this.battleCardPlayer1 = []; //array de new cards
+    this.battleCardPlayer1 = []; //array de objetos
 
-    this.battleCardPlayer2 = []; //array de new cards
+    this.battleCardPlayer2 = []; //array de objetos
 
     this.cardsPlayer1 = []; //array de imagens
 
@@ -46,14 +45,13 @@ class Game {
       this.cardsRandom.push(image1); // faz o push da carta para cardsRandom
       this.cardsPlayer1 = this.cardsRandom.slice(5, 8); //index 7 e 8 do array ja embaralhado e criado as tag img
     }
-    this.battleCardPlayer1 = this.drawnCards.slice(5, 8);
+    this.battleCardPlayer1 = this.drawnCards.slice(5, 8); //array com cartas completas, embaralhadas e selecionadas pra mao do player 1
 
-    console.log(this.battleCardPlayer1);
+    // console.log(this.battleCardPlayer1);
   }
 
   boardGeneratorP2() {
-    this.drawnCards = this.totalCards.sort(() => Math.random() - 0.5); //algoritmo para embaralhar as cartas
-
+    this.drawnCards = this.totalCards.sort(() => Math.random() - 0.5);
     for (let i = 0; i < this.drawnCards.length; i++) {
       const image = document.createElement("img");
       image.setAttribute("src", this.backCard);
@@ -63,7 +61,6 @@ class Game {
   }
 
   flipCard(image, index) {
-    // if (this.battleCardPlayer1.length && this.battleCardPlayer2.length < 1)
     image.setAttribute("src", this.drawnCards[index].src);
     this.battleCardPlayer2.push(this.drawnCards[index]);
   }
@@ -72,11 +69,6 @@ class Game {
     this.player1Choise = this.battleCardPlayer1[index];
     this.player2Choise = this.battleCardPlayer2[this.round];
     pokeName2[this.round].innerText = this.player2Choise.name; //=====>>> Insere nome Pokemon CPU no placar;
-
-    // console.log(this.player1Choise);
-    // console.log(this.player2Choise);
-    // console.log(winTable[this.round]);
-    // console.log(this.player1Choise);
 
     if (this.player1Choise.strength > this.player2Choise.strength) {
       console.log(`${this.player1Choise.name} WIN!!!`);
@@ -121,7 +113,7 @@ class Game {
       console.log(`${this.player1Choise.name} LOSE!!!`);
       this.placarLose++;
       winTable[this.round].innerText = this.player2Choise.name;
-      console.log(this.placarLose);
+      // console.log(this.placarLose);
     }
   }
 }
