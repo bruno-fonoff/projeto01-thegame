@@ -1,21 +1,16 @@
-//=================================>>> <<<=================================\\
-
-const gameBoard = document.getElementById("gameboard"); //linka elemento html ao JS
-const player1 = document.getElementById("player1"); //linka elemento html ao JS
-const player2 = document.getElementById("player2"); //linka elemento html ao JS
-const startBtn = document.getElementById("start"); //linka elemento html ao JS
+const gameBoard = document.getElementById("gameboard");
+const player1 = document.getElementById("player1");
+const player2 = document.getElementById("player2");
+const startBtn = document.getElementById("start");
 const placarPokemon = document.querySelector(".pokemonName");
 const pokeName1 = document.querySelectorAll(".pokeName1");
 const gameP1 = new Game(player1);
-
-//=================================>>> EVENTO AO CLICAR NO BOTAO "START"  <<<=================================\\
 
 startBtn.addEventListener("click", () => {
   gameP1.boardGenerator();
 
   for (let i = 0; i < gameP1.cardsPlayer1.length; i++) {
     gameP1.gameBoard.appendChild(gameP1.cardsPlayer1[i]);
-    //===============================teste tabela
   }
 
   gameP1.boardGeneratorP2();
@@ -28,22 +23,18 @@ startBtn.addEventListener("click", () => {
     gameP1.cardsPlayer1[i].addEventListener(
       "click",
       () => {
-        //=========================>>NOME DO POKEMON PLAYER 1 <<<===========================\\
         let name = gameP1.battleCardPlayer1[i].name;
         pokeName1[gameP1.round].innerText = name;
-        //========== IMAGEM CRESCER CLICADA!
+
         gameP1.cardsPlayer1[i].setAttribute("class", "imageSelect");
         setTimeout(() => {
           gameP1.cardsPlayer1[i].classList.remove("imageSelect");
         }, 2000);
 
-        //=========================>> IMAGEM CRESCER CPU! <<<===========================\\
-
         gameP1.cardsPlayer2[gameP1.round].setAttribute("class", "imageSelect");
         setTimeout(() => {
           gameP1.cardsPlayer2[gameP1.round - 1].classList.remove("imageSelect");
         }, 2000);
-        //=========================>> |||||||||||||||||||| <<<===========================\\
 
         gameP1.flipCard(gameP1.cardsPlayer2[gameP1.round], i);
         gameP1.battle(i);
@@ -66,6 +57,4 @@ startBtn.addEventListener("click", () => {
   }
 
   startBtn.setAttribute("style", "display: none");
-
-  // startBtn.setAttribute("disabled", true);
 });
