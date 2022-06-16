@@ -33,6 +33,10 @@ img {
   margin: 10px;
 }
 
+.imageSelect {
+  height: 300px;
+}
+
 #logo {
   margin-left: auto;
   margin-right: auto;
@@ -58,16 +62,16 @@ img {
   margin: 0;
 }
 
-#players {
+#player1 {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
-#player1 {
+/* #player1 {
 }
 
 #player2 {
-}
+} */
 
 footer {
   height: 150px;
@@ -80,4 +84,13 @@ footer {
 
 #espaco {
   height: 150px;
+}
+
+.linha {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.coluna-50 {
+  width: 50%;
 }
