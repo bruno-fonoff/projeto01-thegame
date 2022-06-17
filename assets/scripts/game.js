@@ -81,6 +81,12 @@ class Game {
       winTable[this.round].innerText = this.player1Choise.name;
 
       this.placarWin++;
+    } else if (this.player1Choise.strength === this.player2Choise.strength) {
+      console.log(`The Battle Was Hard! There Are NO Winners! `);
+      winTable[this.round].innerText = "'Tech Draw'";
+
+      this.placarWin++;
+      this.placarLose++;
     } else {
       console.log(`${this.player1Choise.name} LOSE!!!`);
       this.placarLose++;
