@@ -19,11 +19,9 @@ A simple Pokemon card battle game, where the user selects the card he wants to b
 
 [Slides](https://docs.google.com/presentation/d/1_UBo21X4xbrJXlVt48psxXwio7HciWByvKsXDv-TKmk/edit#slide=id.g13550852f6f_0_5)
 
--
--
--
 
- :white_check_mark:pt-BR
+
+   :white_check_mark:[ pt-BR ]
 
 # Battle Cards Pokemon
 
