@@ -15,6 +15,7 @@ class Game {
       new Cards("Ninetales", "Fire", "./assets/images/ninetales.jpg", 200),
       new Cards("Flareon", "Fire", "./assets/images/flareon.jpg", 210),
       new Cards("Venusaur", "Grass", "./assets/images/venusaur.jpg", 220),
+      new Cards("Melmetal", "Metal", "./assets/images/melmetalgx.jpg", 220),
       new Cards("Gyarados", "Water", "./assets/images/gyarados.jpg", 230),
       new Cards("Blastoise", "Water", "./assets/images/blastoise.jpg", 240),
       new Cards("Dragonite", "Dragon", "./assets/images/dragonite.jpg", 250),
