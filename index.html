@@ -47,10 +47,54 @@
       <button id="start">Dar as Cartas!</button>
     </div>
     <div id="espaco"></div>
+    <div id="dv-modal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1>YOU WIN!</h1>
+        </div>
+
+        <div class="modal-body">
+          <img
+            id="imgModal"
+            src="https://i.pinimg.com/564x/c9/e2/92/c9e2925f439d63f2266f2cae7390ef69.jpg"
+            alt="you win image"
+          />
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn" onclick="closeModal('dv-modal')">
+            Play Again!
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="dv-modal-lose" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1>YOU LOSE!</h1>
+        </div>
+
+        <div class="modal-body">
+          <img
+            id="imgModal"
+            src="https://pm1.narvii.com/6442/c27da3392a01bf75662a13dc2d84863985b1bebf_hq.jpg"
+            alt="The Witcher"
+          />
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn" onclick="closeModal('dv-modal')">
+            Play Again!
+          </button>
+        </div>
+      </div>
+    </div>
     <section id="player1" class="d-flex flex-row mb-3"></section>
     <footer>
       <div></div>
     </footer>
+
     <script src="./assets/scripts/cards.js"></script>
     <script src="./assets/scripts/game.js"></script>
     <script src="./assets/scripts/index.js"></script>

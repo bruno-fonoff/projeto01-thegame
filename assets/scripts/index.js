@@ -6,6 +6,25 @@ const placarPokemon = document.querySelector(".pokemonName");
 const pokeName1 = document.querySelectorAll(".pokeName1");
 const gameP1 = new Game(player1);
 
+function openModal(mn) {
+  let modal = document.getElementById(mn);
+
+  if (typeof modal == "undefined" || modal === null) return;
+
+  modal.style.display = "Block";
+  document.body.style.overflow = "hidden";
+}
+
+function closeModal(mn) {
+  let modal = document.getElementById(mn);
+
+  if (typeof modal == "undefined" || modal === null) return;
+
+  modal.style.display = "none";
+  document.body.style.overflow = "auto";
+  location.reload();
+}
+
 startBtn.addEventListener("click", () => {
   gameP1.boardGenerator();
 
@@ -41,14 +60,14 @@ startBtn.addEventListener("click", () => {
         gameP1.round++;
         if (gameP1.placarWin === 2) {
           setTimeout(() => {
-            alert("CONGRATULATIONS! YOU WIN!");
-            return location.reload();
+            openModal("dv-modal");
+            return;
           }, 2500);
         }
         if (gameP1.placarLose === 2) {
           setTimeout(() => {
-            alert("YOU LOSE!!!");
-            return location.reload();
+            openModal("dv-modal-lose");
+            return;
           }, 2500);
         }
       },

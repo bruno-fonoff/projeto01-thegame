@@ -18,7 +18,7 @@
   margin-right: auto;
   font-family: "Courier New", Courier, monospace;
   font-size: 27px;
-  color: yellow;
+  color: #ffcc03;
   background-color: rgba(0, 0, 0, 0);
   font-weight: bold;
   text-align: center;
@@ -53,10 +53,10 @@ img {
 }
 
 #start {
-  background-color: rgba(255, 255, 0);
-  color: blue;
+  background-color: #ffcc03;
+  color: rgb(0, 85, 255);
   text-align: center;
-  border: 10px solid blue;
+  border: 10px solid rgb(42, 113, 255);
   display: flex;
   font-size: 30px;
   font-weight: bold;
@@ -88,4 +88,70 @@ footer {
 
 #espaco {
   height: 150px;
+}
+.btn {
+  background-color: rgb(42, 113, 255);
+  padding: 5px 10px 5px 10px;
+  border: 2px solid blue;
+  cursor: pointer;
+  transition: background 0.3s;
+  border-radius: 5px;
+  color: #ffcc03;
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+.btn:hover {
+  background-color: #ffcc03;
+  color: rgb(42, 113, 255);
+}
+
+.btn:active {
+}
+
+.modal {
+  background-color: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+}
+
+.modal-content {
+  margin: 0 auto;
+  margin-top: 10%;
+  max-width: 600px;
+  background-color: #eee;
+  padding: 0;
+}
+
+.modal-header h1 {
+  font-weight: bold;
+  text-align: center;
+  background-color: blue;
+  color: #ffcc03;
+}
+
+.modal-header,
+.modal-body,
+.modal-footer {
+  align-items: center;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.modal-header {
+  background-color: blue;
+}
+
+.modal-footer {
+  padding: 10px;
+}
+#imgModal {
+  box-shadow: none;
+  width: 600px;
+  height: 440px;
 }
