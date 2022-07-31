@@ -19,10 +19,12 @@
   font-family: "Courier New", Courier, monospace;
   font-size: 27px;
   color: #ffcc03;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.106);
   font-weight: bold;
   text-align: center;
-  text-shadow: 10px 10px 10px blue;
+  /* text-shadow: 10px 10px 10px blue; */
+  position: relative;
+  bottom: 35px;
 }
 
 #titulosPlacar {
@@ -67,6 +69,10 @@ img {
   margin-right: auto;
   margin-top: 20px;
   box-shadow: 20px 20px 10px black;
+  cursor: pointer;
+}
+#start:hover {
+  font-size: 35px;
 }
 #logo {
   margin: 0;
@@ -90,19 +96,19 @@ footer {
   height: 150px;
 }
 .btn {
-  background-color: rgb(42, 113, 255);
+  background-color: #ffcc03;
   padding: 5px 10px 5px 10px;
   border: 2px solid blue;
   cursor: pointer;
-  transition: background 0.3s;
-  border-radius: 5px;
-  color: #ffcc03;
+  transition: background 0.8s;
+  border-radius: 10px;
+  color: rgb(42, 113, 255);
   font-weight: bolder;
   font-size: 20px;
 }
 
 .btn:hover {
-  background-color: #ffcc03;
+  background-color: white;
   color: rgb(42, 113, 255);
 }
 
@@ -110,7 +116,7 @@ footer {
 }
 
 .modal {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.865);
   position: fixed;
   top: 0;
   left: 0;
@@ -121,17 +127,18 @@ footer {
 
 .modal-content {
   margin: 0 auto;
-  margin-top: 10%;
-  max-width: 600px;
-  background-color: #eee;
-  padding: 0;
+  margin-top: 2%;
+  max-width: 400px;
+  background-color: white;
 }
 
 .modal-header h1 {
   font-weight: bold;
   text-align: center;
-  background-color: blue;
+  background-color: rgb(42, 113, 255);
   color: #ffcc03;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 40px;
 }
 
 .modal-header,
@@ -144,14 +151,16 @@ footer {
 }
 
 .modal-header {
-  background-color: blue;
+  background-color: rgb(42, 113, 255);
 }
 
 .modal-footer {
   padding: 10px;
+  background-color: rgb(42, 113, 255);
 }
 #imgModal {
   box-shadow: none;
-  width: 600px;
-  height: 440px;
+  width: 400px;
+  height: 300px;
+  margin: 0;
 }
