@@ -47,7 +47,7 @@ startBtn.addEventListener("click", () => {
         }
         if (gameP1.placarLose === 2) {
           setTimeout(() => {
-            swal("YOU LOSE!!!");
+            swal("YOU LOSE!");
             return location.reload();
           }, 2500);
         }
