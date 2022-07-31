@@ -41,13 +41,13 @@ startBtn.addEventListener("click", () => {
         gameP1.round++;
         if (gameP1.placarWin === 2) {
           setTimeout(() => {
-            alert("CONGRATULATIONS! YOU WIN!");
+            swal("CONGRATULATIONS! YOU WIN!");
             return location.reload();
           }, 2500);
         }
         if (gameP1.placarLose === 2) {
           setTimeout(() => {
-            alert("YOU LOSE!!!");
+            swal("YOU LOSE!!!");
             return location.reload();
           }, 2500);
         }
