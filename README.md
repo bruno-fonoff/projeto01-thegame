@@ -12,7 +12,7 @@ A simple Pokemon card battle game, where the user selects the card he wants to b
 - **CSS3**
 - **Vanilla Javascript** (DOM Manipulation )
 
-<img src="https://alonza.com.br/wp-content/uploads/2021/07/linguagens-front-end.png" width="200" height="100">
+
 
 ### Links
 
@@ -36,7 +36,7 @@ Um jogo simples de batalha de cartas Pokemon, onde o usuário seleciona a carta 
 - **CSS3**
 - **Vanilla Javascript** ( Manipulação de DOM )
 
-<img src="https://alonza.com.br/wp-content/uploads/2021/07/linguagens-front-end.png" width="200" height="100">
+
 
 ### Links
 
